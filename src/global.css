@@ -1,0 +1,16 @@
+:root {
+    --accent-color: #FFFDF5;
+}
+
+body {
+    background: #FFFDF5;
+}
+
+@keyframes cursor-blink {
+    from, to {
+        background: transparent;
+    }
+    50% {
+        background: black;
+    }
+}
