@@ -57,6 +57,15 @@ const Cursor = styled.div`
   animation: cursor-blink 1.2s steps(1) infinite;
 `
 
+export function Head() {
+  return <>
+    <title>Asosiasi Informatika Indonesia</title>
+    <meta name="theme-color" content="#FFFDF5"/>
+    <meta name="description" content="Asosiasi Informatika Indonesia adalah organisasi yang didirikan
+    dengan tujuan mewadahi dan mengembangkan minat serta bakat masyarakat Indonesia di dalam bidang informatika"/>
+  </>
+}
+
 export default function Home() {
   const greetings = [
     'Hello,',
