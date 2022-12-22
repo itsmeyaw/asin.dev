@@ -9,34 +9,56 @@ const Greeting = styled.div`
   justify-content: center;
   margin-left: 10%;
   width: 50%;
+  font-size: 16pt;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 11pt;
+  }
+  
+  @media only screen and (min-width: 480px) and (max-width: 720px) {
+    font-size: 12pt;
+  }
   
   @media only screen and (max-width: 720px) {
     width: auto;
     margin-left: 0;
     padding: 0 10%;
   }
+
+  @media only screen and (min-width: 720px) and (max-width: 1400px) {
+    font-size: 14pt;
+  }
 `
 
 const Title = styled.h1`
-  font-size: 96pt;
+  font-size: 6em;
   font-weight: 600;
   margin: 0;
   line-height: 1em;
   font-family: Eczar, serif;
 
+  @media only screen and (max-width: 480px) {
+    font-size: 2em;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 720px) {
+    font-size: 3.5em;
+  }
+  
   @media only screen and (max-width: 720px) {
-    font-size: 36pt;
     text-align: center;
+  }
+
+  @media only screen and (min-width: 720px) and (max-width: 1400px) {
+    font-size: 5em;
   }
 `
 
 const ExplainingText = styled.p`
   font-family: Roboto, sans-serif;
-  font-size: 16pt;
   margin-bottom: 0px;
 
   @media only screen and (max-width: 720px) {
-    font-size: 12pt;
     text-align: center;
   }
 `
@@ -48,6 +70,7 @@ const Spacer = styled.div`
 const JoinButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  margin-top: 5em;
   
   @media only screen and (max-width: 720px) {
     width: 100%;
@@ -62,7 +85,7 @@ const JoinButton = styled.a`
   text-decoration: none;
   border-radius: 80px;
   padding: 0.8em 1.6em;
-  font-size: 24px;
+  font-size: 1.1em;
   border: solid 1px black;
   transition: 0.15s ease-in-out;
   
@@ -73,7 +96,10 @@ const JoinButton = styled.a`
   }
 
   @media only screen and (max-width: 720px) {
-    font-size: 14pt;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 1400px) {
     text-align: center;
   }
 `
@@ -213,7 +239,6 @@ export default function Home() {
         Saat ini, kebanyakan pengurus ASIN berdomisili di Jerman. Namun keanggotaan ASIN
         bersifat terbuka dan tidak terbatas pada tempat tinggal, umur, serta latar belakang.
       </ExplainingText>
-      <Spacer height={'80px'}></Spacer>
       <JoinButtonWrapper>
         <JoinButton href={'https://join.asin.dev'}>Join server Discord ASIN!</JoinButton>
       </JoinButtonWrapper>
