@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useEffect, useRef, useState } from 'react'
 
 const Greeting = styled.div`
-  height: 100vh;
+  height: calc(100vh - env(safe-area-inset-bottom) - env(safe-area-inset-top));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,6 +97,7 @@ export function Head() {
   return <>
     <title>Asosiasi Informatika Indonesia</title>
     <meta name="theme-color" content="#FFFDF5"/>
+    <meta name="theme-background" content="#FFFDF5"/>
     <meta name="description" content="Asosiasi Informatika Indonesia adalah organisasi yang didirikan
     dengan tujuan mewadahi dan mengembangkan minat serta bakat masyarakat Indonesia di dalam bidang informatika"/>
   </>
