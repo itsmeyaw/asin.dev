@@ -9,6 +9,12 @@ const Greeting = styled.div`
   justify-content: center;
   margin-left: 10%;
   width: 50%;
+  
+  @media only screen and (max-width: 720px) {
+    width: auto;
+    margin-left: 0;
+    padding: 0 10%;
+  }
 `
 
 const Title = styled.h1`
@@ -17,16 +23,36 @@ const Title = styled.h1`
   margin: 0;
   line-height: 1em;
   font-family: Eczar, serif;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 36pt;
+    text-align: center;
+  }
 `
 
 const ExplainingText = styled.p`
   font-family: Roboto, sans-serif;
   font-size: 16pt;
-  margin-bottom: 0px; 
+  margin-bottom: 0px;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 12pt;
+    text-align: center;
+  }
 `
 
 const Spacer = styled.div`
   height: ${props => props.height};
+`
+
+const JoinButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  
+  @media only screen and (max-width: 720px) {
+    width: 100%;
+    justify-content: center;
+  }
 `
 
 const JoinButton = styled.a`
@@ -35,14 +61,20 @@ const JoinButton = styled.a`
   color: black;
   text-decoration: none;
   border-radius: 80px;
-  padding: 20px 40px;
+  padding: 0.8em 1.6em;
   font-size: 24px;
   border: solid 1px black;
   transition: 0.15s ease-in-out;
   
+  
   &:hover {
     background: black;
     color: var(--accent-color);
+  }
+
+  @media only screen and (max-width: 720px) {
+    font-size: 14pt;
+    text-align: center;
   }
 `
 
@@ -55,6 +87,10 @@ const Cursor = styled.div`
   position: relative;
   bottom: -0.1em;
   animation: cursor-blink 1.2s steps(1) infinite;
+
+  @media only screen and (max-width: 720px) {
+    width: 7px;
+  }
 `
 
 export function Head() {
@@ -168,7 +204,7 @@ export default function Home() {
         we are asin!
       </Title>
       <ExplainingText>
-        Asosiasi Informatika Indonesia (ASIN, read <em>“as-in”</em> ) adalah organisasi
+        Asosiasi Informatika Indonesia (ASIN, dibaca <em>“as-in”</em> ) adalah organisasi
         yang didirikan dengan tujuan mewadahi dan mengembangkan
         minat serta bakat masyarakat Indonesia di dalam bidang informatika.
       </ExplainingText>
@@ -176,10 +212,10 @@ export default function Home() {
         Saat ini, kebanyakan pengurus ASIN berdomisili di Jerman. Namun keanggotaan ASIN
         bersifat terbuka dan tidak terbatas pada tempat tinggal, umur, serta latar belakang.
       </ExplainingText>
-      <Spacer height={'100px'}></Spacer>
-      <div>
+      <Spacer height={'80px'}></Spacer>
+      <JoinButtonWrapper>
         <JoinButton href={'https://join.asin.dev'}>Join server Discord ASIN!</JoinButton>
-      </div>
+      </JoinButtonWrapper>
     </Greeting>
   </>
 }
